@@ -47,8 +47,9 @@ export default function ProjectDetailPage() {
       setProject(proj);
       const projTasks = await tasksApi.getTasks({ projectId });
       setTasks(projTasks);
-    } catch (err: any) {
-      setError(err.message || 'Failed to load project details');
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Failed to load project details';
+      setError(msg);
     } finally {
       setLoading(false);
     }

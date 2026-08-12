@@ -41,8 +41,9 @@ export default function TasksPage() {
       setError(null);
       const data = await tasksApi.getTasks(filters);
       setTasks(data);
-    } catch (err: any) {
-      setError(err.message || 'Failed to fetch tasks from backend server.');
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Failed to fetch tasks from backend server.';
+      setError(msg);
     } finally {
       setLoading(false);
     }

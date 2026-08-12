@@ -36,8 +36,9 @@ export default function ProjectsPage() {
       ]);
       setProjects(projData);
       setUsers(userData);
-    } catch (err: any) {
-      setError(err.message || 'Failed to fetch projects');
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Failed to fetch projects';
+      setError(msg);
     } finally {
       setLoading(false);
     }

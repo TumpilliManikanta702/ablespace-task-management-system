@@ -1,5 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
+import { Prisma } from '@prisma/client';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { UpdateTaskDto } from './dto/update-task.dto';
 import { FilterTaskDto } from './dto/filter-task.dto';
@@ -44,7 +45,7 @@ export class TasksService {
   };
 
   async findAll(filters?: FilterTaskDto) {
-    const where: any = {};
+    const where: Prisma.TaskWhereInput = {};
 
     if (filters) {
       const { search, status, priority, memberId, labelId, projectId, team } = filters;
@@ -69,9 +70,9 @@ export class TasksService {
       if (search && search.trim() !== '') {
         const query = search.trim();
         where.OR = [
-          { title: { contains: query, mode: 'insensitive' } },
-          { description: { contains: query, mode: 'insensitive' } },
-          { team: { contains: query, mode: 'insensitive' } },
+          { title: { contains: query } },
+          { description: { contains: query } },
+          { team: { contains: query } },
         ];
       }
     }

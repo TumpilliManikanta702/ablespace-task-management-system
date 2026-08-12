@@ -18,8 +18,9 @@ export default function LoginPage() {
     setErrorMessage('');
     try {
       await guestLogin();
-    } catch (err: any) {
-      setErrorMessage(err.message || 'Unable to authenticate guest session. Please check backend server.');
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Unable to authenticate guest session. Please check backend server.';
+      setErrorMessage(msg);
       setLoading(false);
     }
   };
