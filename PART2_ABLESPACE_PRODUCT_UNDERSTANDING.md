@@ -2,35 +2,41 @@
 
 ## 1. Feature Overview
 
-The **"Take Data"** feature within AbleSpace is the primary data-collection interface designed for special education professionals (Teachers, Speech-Language Pathologists, Occupational Therapists, and School Psychologists).
+The **"Take Data"** feature within AbleSpace is the primary data-collection interface designed for special education professionals, including Teachers, Speech-Language Pathologists, Occupational Therapists, and School Psychologists.
 
-### Core Objectives:
+### Core Objectives
+
 - **IEP Goal Progress Tracking**: Record live trial data against specific Individualized Education Program (IEP) goals during active student sessions.
-- **Trial & Behavior Recording**: Capture quantitative metrics (percentage accuracy, prompt hierarchies, frequency, duration, and interval data).
-- **Compliance & Progress Reporting**: Persist session observations directly into automated progress reports and IEP compliance records.
+- **Trial & Behavior Recording**: Capture quantitative metrics such as percentage accuracy, prompt levels, frequency, duration, and interval data.
+- **Compliance & Progress Reporting**: Persist session observations so they can contribute to progress tracking and reporting.
 
 ---
 
 ## 2. Step-by-Step User Workflow
 
 ### Step 1 — Open Caseload
-Navigate to the **Caseload** tab from the left sidebar navigation menu under the `CAPTURE` section. View the active caseload overview displaying all assigned students, groups, and unassigned metrics.
+
+Navigate to the **Caseload** tab from the left sidebar under the `CAPTURE` section. The Caseload screen provides an overview of assigned students, groups, and unassigned students.
 
 ![AbleSpace Caseload screen](./caseload_take_data.png)
 
-*Figure 1: AbleSpace Caseload screen showing the student list and the "Take Data" action.*
+*Figure 1: AbleSpace Caseload screen showing the student list and the "Take Data" action available for each student.*
 
 ### Step 2 — Select Student
-Locate the target student row within the Caseload table (using search or filtering). Review student metadata (IEP Due Date, Evaluation Due Date, Collaborators, Service Time, and School).
+
+Locate the target student in the Caseload table using search or filtering. Review relevant student information such as IEP Due Date, Evaluation Due Date, Collaborators, Service Time, and School.
 
 ### Step 3 — Click Take Data
-Click the primary blue **"Take Data"** action button located in the rightmost `Actions` column of the student row.
+
+Click the primary blue **"Take Data"** action in the `Actions` column of the selected student's row.
 
 ### Step 4 — Record Data
-The student's data-collection workspace opens, presenting active IEP goals categorized by domain (e.g., Speech & Language, Motor Skills, Behavioral). Record observation trials using quick interaction controls.
+
+The data-collection workflow allows the educator to record observations against the student's active goals using the available data-entry controls.
 
 ### Step 5 — Save
-Save the recorded session observations to persist trials into the system, updating progress reporting context.
+
+Save the recorded session observations so that the collected data is persisted and can be used for progress tracking and reporting.
 
 ---
 
@@ -48,7 +54,7 @@ Save the recorded session observations to persist trials into the system, updati
 
 ## 4. Key UX Strengths
 
-- **Classroom Speed & Efficiency** — The direct Take Data action provides quick access to the data-collection workflow.
+- **Classroom Speed & Efficiency** — The direct **Take Data** action provides quick access to the data-collection workflow.
 - **Contextual Clarity** — Keeping student and goal-related information close to the data-entry workflow reduces unnecessary navigation.
 - **Structured Data Collection** — Standardized data-entry methods can help maintain consistency across different professionals and sessions.
 
@@ -56,10 +62,21 @@ Save the recorded session observations to persist trials into the system, updati
 
 ## 5. Improvements
 
-- **Offline Data Resilience**: Add an offline ServiceWorker buffer (IndexedDB) with an explicit sync status indicator to handle unreliable school connectivity.
-- **Group Session Mode**: Introduce multi-student tracking to reduce repetitive navigation when professionals work with multiple students in a group session.
-- **Global Quick Access**: Provide a global shortcut (`⌘+K`) to accelerate access to the Take Data workflow for users managing larger caseloads.
-- **Voice-Assisted Data Entry**: Provide hands-free interaction, although it would require additional accessibility, privacy, and accuracy considerations.
+### 1. Offline Data Resilience
+
+Add an offline Service Worker/IndexedDB buffer with an explicit sync status indicator to handle unreliable school connectivity and reduce the risk of losing session data.
+
+### 2. Group Session Mode
+
+Introduce multi-student tracking to reduce repetitive navigation when professionals work with multiple students during group sessions.
+
+### 3. Global Quick Access
+
+Provide a global shortcut such as `⌘+K` to accelerate access to the Take Data workflow for users managing larger caseloads.
+
+### 4. Voice-Assisted Data Entry
+
+Provide optional hands-free interaction for accessibility and convenience, while considering privacy, accuracy, and user consent requirements.
 
 ---
 
